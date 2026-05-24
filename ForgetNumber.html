@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Microsoft</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="Assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background-image:url('Assets/Bacground-Image.svg');
+background-size:cover; background-position:center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+
+    <div class="bg-[#292929] w-[488px] px-10 pt-12 pb-10 rounded-3xl shadow-2xl text-center overflow-visible">
+
+        <div class="relative mb-10">
+
+            <button onclick="history.back()" class="absolute left-0 top-0 text-[#b3b3b3] hover:text-white">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div class="flex justify-center items-center gap-3">
+                <svg width="22" height="22">
+                    <rect x="0" y="0" width="10" height="10" fill="#F25022" />
+                    <rect x="11" y="0" width="10" height="10" fill="#7FBA00" />
+                    <rect x="0" y="11" width="10" height="10" fill="#00A4EF" />
+                    <rect x="11" y="11" width="10" height="10" fill="#FFB900" />
+                </svg>
+
+                <p class="text-white text-[18px] font-semibold">
+                    Microsoft
+                </p>
+            </div>
+
+        </div>
+
+        <h1 class="text-white text-[24px] font-semibold mb-3 leading-8">Recover your username</h1>
+
+        <p class="text-[#d6d6d6] text-[14px] mb-8">Enter a phone number that might be associated with your Microsoft
+            account.
+            If
+            it matches, we'll send you a code.</p>
+
+        <div class="flex gap-3">
+
+            <div class="relative w-[105px] overflow-visible">
+                <span id="selectedCode"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-white pointer-events-none z-10 bg-[#292929] px-1">
+                    +91
+                </span>
+
+                <select id="countrySelect"
+                    class="w-full h-[50px] bg-transparent border border-gray-600 rounded-md pl-4 pr-10 appearance-none text-transparent focus:outline-none focus:border-blue-400">
+
+                    <option value="+93" class="bg-[#292929] text-white">Afghanistan (+93)</option>
+                    <option value="+355" class="bg-[#292929] text-white">Albania (+355)</option>
+                    <option value="+213" class="bg-[#292929] text-white">Algeria (+213)</option>
+                    <option value="+376" class="bg-[#292929] text-white">Andorra (+376)</option>
+                    <option value="+244" class="bg-[#292929] text-white">Angola (+244)</option>
+                    <option value="+54" class="bg-[#292929] text-white">Argentina (+54)</option>
+                    <option value="+61" class="bg-[#292929] text-white">Australia (+61)</option>
+                    <option value="+880" class="bg-[#292929] text-white">Bangladesh (+880)</option>
+                    <option value="+55" class="bg-[#292929] text-white">Brazil (+55)</option>
+                    <option value="+86" class="bg-[#292929] text-white">China (+86)</option>
+                    <option value="+33" class="bg-[#292929] text-white">France (+33)</option>
+                    <option value="+49" class="bg-[#292929] text-white">Germany (+49)</option>
+                    <option value="+91" selected class="bg-[#292929] text-white"> India (+91)</option>
+                    <option value="+81" class="bg-[#292929] text-white">Japan (+81)</option>
+                    <option value="+60" class="bg-[#292929] text-white">Malaysia (+60)</option>
+                    <option value="+977" class="bg-[#292929] text-white">Nepal (+977)</option>
+                    <option value="+92" class="bg-[#292929] text-white">Pakistan (+92)</option>
+                    <option value="+65" class="bg-[#292929] text-white">Singapore (+65)</option>
+                    <option value="+94" class="bg-[#292929] text-white">Sri Lanka (+94)</option>
+                    <option value="+971" class="bg-[#292929] text-white">UAE (+971)</option>
+                    <option value="+44" class="bg-[#292929] text-white">United Kingdom (+44)</option>
+                    <option value="+1" class="bg-[#292929] text-white">United States (+1)</option>
+                </select>
+                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <input type="text" placeholder="Phone number"
+                class="flex-1 h-[50px] bg-transparent border border-gray-600 rounded-md px-4 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400">
+        </div>
+
+        <div class="text-left mt-5 mb-8">
+            <a href="ForgetEmail.html" class="text-[#479ef5] text-[14px] font-semibold font-sans hover:underline">
+                Use email address instead
+            </a>
+        </div>
+
+        <button class="w-full h-[42px] bg-[#0067B8] hover:bg-[#005ca8] text-white rounded-md font-medium">Next</button>
+    </div>
+    <div class="absolute bottom-5 flex gap-8 text-[#d6d6d6] font-sans font-semibold text-[12px]">
+        <a href="#">Help and feedback</a>
+        <a href="#">Terms of use</a>
+        <a href="#">Privacy and cookies</a>
+    </div>
+    <span class="absolute bottom-0 text-[#d6d6d6] text-[10px] font-sans font-semibold ">Use private browsing if this is
+        not your device. <a href="#" class="text-[#479ef5] text-[10px] font-semibold font-sans hover:underline">Learn
+            more</a></span>
+
+    <script>
+
+        const select = document.getElementById("countrySelect");
+        const code = document.getElementById("selectedCode");
+
+        code.textContent = select.value;
+
+        select.addEventListener("change", () => {
+            code.textContent = select.value;
+        });
+
+    </script>
+</body>
+
+</html>
