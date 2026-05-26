@@ -8,6 +8,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="shortcut icon" href="Assets/favicon.ico" type="image/x-icon">
+
+    <style>
+        summary {
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .menu-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow-icon {
+            transition: transform .25s ease;
+            transform-origin: center;
+        }
+
+        details[open] .arrow-icon {
+            transform: rotate(180deg);
+        }
+    </style>
 </head>
 
 <body class="font-sans bg-white overflow-x-hidden">
@@ -17,7 +42,7 @@
             <div class="flex items-center justify-between h-14 md:h-16">
 
                 <div class="flex items-center gap-5 md:hidden">
-                    <button>
+                    <button id="menuBtn">
                         <div class="w-5 h-0.5 bg-black mb-1"></div>
                         <div class="w-5 h-0.5 bg-black mb-1"></div>
                         <div class="w-5 h-0.5 bg-black"></div>
@@ -29,7 +54,7 @@
                     <img src="Assets/Microsoft-logo.png" class="w-24 md:w-28">
                     <nav class="hidden md:flex items-center gap-3 lg:gap-6 text-[12px] lg:text-[13px] ml-4 lg:ml-8">
                         <a href="#"
-                            class=" hover:hover:underline hover:underline-offset-8 decoration-[#262626] decoration-2 whitespace-nowrap">Microsoft
+                            class="hover:underline hover:underline-offset-8 decoration-[#262626] decoration-2 whitespace-nowrap">Microsoft
                             365</a>
                         <a href="#"
                             class=" hover:underline hover:underline-offset-8 decoration-[#262626] decoration-2 whitespace-nowrap">Teams</a>
@@ -59,24 +84,340 @@
                             class="flex items-center gap-1 lg:gap-2 hover:underline hover:underline-offset-8 decoration-[#262626] decoration-2">
                             Cart <img src="Assets/Cart.svg" class="w-4">
                         </a>
-                        <a href="signin.html" class="flex items-center gap-2 lg:gap-3">
+                        <a href="SignIn.html" class="flex items-center gap-2 lg:gap-3">
                             Sign in
                             <button
                                 class="w-8 h-8 rounded-full border border-black text-xs flex items-center justify-center"
-                                onclick="window.location.href='signin.html'">ME</button>
+                                onclick="window.location.href='SignIn.html'">ME</button>
                         </a>
                     </div>
                     <div class="flex md:hidden items-center gap-5">
                         <img src="Assets/Cart.svg" class="w-4">
                         <button
                             class="w-8 h-8 rounded-full border border-black text-xs flex items-center justify-center"
-                            onclick="window.location.href='signin.html'">ME</button>
+                            onclick="window.location.href='SignIn.html'">ME</button>
                     </div>
                 </div>
 
             </div>
         </div>
     </header>
+
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-50 hidden md:hidden overflow-y-auto">
+
+        <div class="flex items-center justify-between px-5 py-4 border-b">
+
+            <button id="closeBtn" class="text-3xl">
+                ×
+            </button>
+
+            <img src="Assets/Microsoft-logo.png" class="w-28">
+
+            <div class="flex items-center gap-4">
+
+                <img src="Assets/Cart.svg" class="w-5">
+
+                <button class="w-10 h-10 rounded-full border">
+                    ME
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="p-5 border-b-2 border-dotted">
+                Microsoft 365
+            </div>
+
+            <div class="p-5 border-b">
+                Azure
+            </div>
+
+            <div class="p-5 border-b">
+                Copilot
+            </div>
+
+            <div class="p-5 border-b">
+                Windows
+            </div>
+
+            <div class="p-5 border-b">
+                Surface
+            </div>
+
+            <div class="p-5 border-b">
+                Xbox
+            </div>
+
+            <div class="p-5 border-b">
+                Support
+            </div>
+
+            <details class="border-b">
+
+                <summary class="p-5 flex justify-between items-center border-b-2 border-dotted">
+
+                    <span>Software</span>
+
+                    <span class="menu-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+
+                        </svg>
+                    </span>
+                    </span>
+                </summary>
+
+                <div>
+
+                    <div class="px-10 py-4 border-b">
+                        Windows Apps
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        OneDrive
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Outlook
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Moving from Skype to Teams
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        OneNote
+                    </div>
+
+                    <div class="px-10 py-4">
+                        Microsoft Teams
+                    </div>
+
+                </div>
+
+            </details>
+
+            <details class="border-b">
+
+                <summary class="p-5 flex justify-between items-center">
+
+                    <span>PCs & Devices</span>
+
+                    <span class="menu-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+
+                        </svg>
+                    </span>
+                    </span>
+
+                </summary>
+
+                <div>
+
+                    <div class="px-10 py-4 border-b">
+                        Shop Xbox
+                    </div>
+
+                    <div class="px-10 py-4">
+                        Accessories
+                    </div>
+
+                </div>
+
+            </details>
+
+            <details class="border-b">
+
+                <summary class="p-5 flex justify-between items-center">
+
+                    <span>Entertainment</span>
+
+                    <span class="menu-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+
+                        </svg>
+                    </span>
+
+                </summary>
+
+                <div>
+
+                    <div class="px-10 py-4 border-b">
+                        Xbox Game Pass Ultimate
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Xbox Games
+                    </div>
+
+                    <div class="px-10 py-4">
+                        PC Game
+                    </div>
+
+                </div>
+
+            </details>
+
+            <details class="border-b">
+
+                <summary class="p-5 flex justify-between items-center">
+
+                    <span>Business</span>
+
+                    <span class="menu-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+
+                        </svg>
+                    </span>
+
+                </summary>
+
+                <div>
+
+                    <div class="px-10 py-4 border-b">
+                        Microsoft AI
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Microsoft Security
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Azure
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Dynamics 365
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Microsoft 365 for business
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Microsoft Power Platform
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Windows 365
+                    </div>
+
+                    <div class="px-10 py-4">
+                        Digital Sovereignty
+                    </div>
+
+                </div>
+
+            </details>
+
+            <details class="border-b">
+
+                <summary class="p-5 flex justify-between items-center">
+
+                    <span>Developer & IT</span>
+
+                    <span class="menu-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+
+                        </svg>
+                    </span>
+
+                </summary>
+
+                <div>
+
+                    <div class="px-10 py-4 border-b">
+                        Microsoft Developer
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Microsoft Learn
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Support for AI marketplace apps
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Microsoft Tech Community
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Microsoft Marketplace
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Software companies
+                    </div>
+
+                    <div class="px-10 py-4">
+                        Visual Studio
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <details class="border-b">
+
+                <summary class="p-5 flex justify-between items-center">
+
+                    <span>Other</span>
+                    <span class="menu-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+
+                        </svg>
+                    </span>
+
+                </summary>
+
+                <div>
+
+                    <div class="px-10 py-4 border-b">
+                        Free downloads & Security
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Education
+                    </div>
+
+                    <div class="px-10 py-4 border-b">
+                        Gift Cards
+                    </div>
+
+                    <div class="px-10 py-4">
+                        Licensing
+                    </div>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </div>
 
     <section class="bg-[#f2f2f2]">
         <div class="hero-slide">
@@ -324,7 +665,6 @@
 
     <section class="max-w-[1400px] mx-auto px-5 md:px-6 py-12 md:py-16">
 
-        <!-- MOBILE -->
         <div class="md:hidden">
 
             <img src="Assets/Mobile-3.jpg" class="w-full h-auto">
@@ -348,7 +688,6 @@
 
         </div>
 
-        <!-- DESKTOP -->
         <div class="hidden md:block relative">
 
             <img src="Assets/Image-4.avif" class="w-full h-auto object-cover">
@@ -670,12 +1009,11 @@
         const dots = document.querySelectorAll(".dot");
 
         let current = 0;
+        let isPaused = false;
 
         function showSlide(index) {
 
-            slides.forEach(slide => {
-                slide.classList.add("hidden");
-            });
+            slides.forEach(slide => slide.classList.add("hidden"));
 
             dots.forEach(dot => {
                 dot.classList.remove("bg-black");
@@ -691,21 +1029,15 @@
 
         function nextSlide() {
             current++;
-            if (current >= slides.length) {
-                current = 0;
-            }
+            if (current >= slides.length) current = 0;
             showSlide(current);
         }
 
-        document.getElementById("nextBtn").addEventListener("click", () => {
-            nextSlide();
-        });
+        document.getElementById("nextBtn").addEventListener("click", nextSlide);
 
         document.getElementById("prevBtn").addEventListener("click", () => {
             current--;
-            if (current < 0) {
-                current = slides.length - 1;
-            }
+            if (current < 0) current = slides.length - 1;
             showSlide(current);
         });
 
@@ -716,19 +1048,62 @@
             });
         });
 
-        // ⭐ AUTO PLAY ADD KARO
-        let autoPlay = setInterval(nextSlide, 4000);
+        let autoPlay = setInterval(() => {
+            if (!isPaused) nextSlide();
+        }, 2000);
 
-        // optional: pause on hover
         document.querySelector(".hero-slide").parentElement.addEventListener("mouseenter", () => {
             clearInterval(autoPlay);
         });
 
         document.querySelector(".hero-slide").parentElement.addEventListener("mouseleave", () => {
-            autoPlay = setInterval(nextSlide, 4000);
+            autoPlay = setInterval(() => {
+                if (!isPaused) nextSlide();
+            }, 2000);
+        });
+
+        const pauseBtn = document.getElementById("pauseBtn");
+
+        pauseBtn.addEventListener("click", () => {
+
+            isPaused = !isPaused;
+
+            if (isPaused) {
+
+                clearInterval(autoPlay);
+
+                pauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-gray-700" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
+
+            }
+
+            else {
+
+                autoPlay = setInterval(() => {
+                    nextSlide();
+                }, 2000);
+
+                pauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-gray-700" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>`;
+
+            }
+
         });
 
         showSlide(current);
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const closeBtn = document.getElementById("closeBtn");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("hidden");
+            document.body.classList.add("overflow-hidden");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+        });
+
     </script>
 </body>
 
